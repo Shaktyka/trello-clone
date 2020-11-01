@@ -1,6 +1,7 @@
 // Добавление заметки
 let noteIdCounter = 8;
 
+// Все колонки
 const columns = document.querySelectorAll(`.column`);
 
 // Создаёт заметку
@@ -27,6 +28,19 @@ const addNoteBtnClickHandler = (evt) => {
 const columnInit = (column) => {
     const addNoteBtn = column.querySelector(`[data-action-addNote]`);
     addNoteBtn.addEventListener(`click`, addNoteBtnClickHandler);
+
+    const columnHeader = column.querySelector(`.column-header`);
+
+    // Делаем заголовок колонки редактируемым
+    columnHeader.addEventListener(`dblclick`, (evt) => {
+        columnHeader.setAttribute(`contenteditable`, true);
+        columnHeader.focus();
+    });
+
+    // При потере фокуса 
+    columnHeader.addEventListener(`blur`, (evt) => {
+        columnHeader.removeAttribute(`contenteditable`, `true`);
+    });
 };
 
 columns.forEach(columnInit);
