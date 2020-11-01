@@ -1,5 +1,5 @@
+// Добавление заметки
 let noteIdCounter = 8;
-let columnIdCounter = 4;
 
 const columns = document.querySelectorAll(`.column`);
 
@@ -22,7 +22,10 @@ const addNoteBtnClickHandler = (evt) => {
     notesBlock.appendChild(note);
 };
 
-columns.forEach((column) => {
+// Для каждой колонки
+const columnInit = (column) => {
     const addNoteBtn = column.querySelector(`[data-action-addNote]`);
     addNoteBtn.addEventListener(`click`, addNoteBtnClickHandler);
-});
+};
+
+columns.forEach(columnInit);
