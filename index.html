@@ -10,23 +10,26 @@
 </head>
 
 <body>
+    <h1 class="v-hidden">Trello Clone</h1>
     <div class="container">
         <div class="row">
             <div class="columns">
-                <div class="column" draggable="true" data-column-id="1">
-                    <p class="column-header" contenteditable="true">В плане</p>
+                <section class="column" draggable="true" data-column-id="1">
+                    <h2 class="column-header" contenteditable="true">В плане</h2>
                     <div data-notes>
                         <div class="note" draggable="true" data-note-id="1">Тут какая-та задача о чем-то интересном.</div>
                         <div class="note" draggable="true" data-note-id="2">А это задача о чем-то не интересном.</div>
                         <div class="note" draggable="true" data-note-id="3">Купить собачий корм.</div>
                     </div>
                     <p class="column-footer">
-                        <span data-action-addNote class="action">+ Добавить карточку</span>
+                        <button type="button" data-action-addNote class="action">
+													+ Добавить карточку
+												</button>
                     </p>
-                </div>
+                </section>
 
-                <div class="column" draggable="true" data-column-id="2">
-                    <p class="column-header" contenteditable="true">В плане</p>
+                <section class="column" draggable="true" data-column-id="2">
+                    <h2 class="column-header" contenteditable="true">В плане</h2>
                     <div data-notes>
                         <div class="note" draggable="true" data-note-id="4">Тут какая-та задача о чем-то интересном.</div>
                         <div class="note" draggable="true" data-note-id="5">А это задача о чем-то не интересном.</div>
@@ -34,28 +37,34 @@
                         <div class="note" draggable="true" data-note-id="7">Купить собачий корм.</div>
                     </div>
                     <p class="column-footer">
-                        <span data-action-addNote class="action">+ Добавить карточку</span>
+                        <button data-action-addNote class="action">
+													+ Добавить карточку
+												</button>
                     </p>
-                </div>
+                </section>
 
-                <div class="column" draggable="true" data-column-id="3">
-                    <p class="column-header" contenteditable="true">В плане</p>
+                <section class="column" draggable="true" data-column-id="3">
+                    <h2 class="column-header" contenteditable="true">В плане</h2>
                     <div data-notes></div>
                     <p class="column-footer">
-                        <span data-action-addNote class="action">+ Добавить карточку</span>
+                        <button data-action-addNote class="action">
+												+ Добавить карточку
+											</button>
                     </p>
-                </div>
+                </section>
             </div>
 
             <div class="adder">
-                <span data-action-addColumn class="action">+ Добавить колонку</span>
+                <button data-action-addColumn class="action">
+									+ Добавить колонку
+								</button>
             </div>
         </div>
     </div>
 
-    <script src="column.js"></script>
+    <!-- <script src="column.js"></script>
     <script src="note.js"></script>
-    <script src="row.js"></script>
+    <script src="row.js"></script> -->
     <script src="script.js"></script>
 </body>
 
