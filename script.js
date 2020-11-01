@@ -19,6 +19,7 @@ const addNoteBtnClickHandler = (evt) => {
     const column = target.closest(`.column`);
     const notesBlock = column.querySelector(`[data-notes]`);
     const note = createNote();
+    noteProcess(note);
     notesBlock.appendChild(note);
 };
 
