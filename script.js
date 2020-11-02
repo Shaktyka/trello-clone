@@ -23,6 +23,8 @@ const addNoteBtnClickHandler = (evt) => {
     const note = createNote();
     noteProcess(note);
     notesBlock.appendChild(note);
+    note.setAttribute(`contenteditable`, true);
+    note.focus();
 };
 
 // Для каждой колонки

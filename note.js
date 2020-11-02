@@ -71,12 +71,20 @@ function dropNoteHandler(evt) {
 const noteProcess = (note) => {
     note.addEventListener(`dblclick`, (evt) => {
         note.setAttribute(`contenteditable`, `true`);
+        note.removeAttribute(`draggable`);
+        note.closest(`.column`).removeAttribute(`draggable`);
         note.focus();
     });
 
     // При потере фокуса
     note.addEventListener(`blur`, (evt) => {
         note.removeAttribute(`contenteditable`, `true`);
+        note.setAttribute(`draggable`, true);
+        note.closest(`.column`).setAttribute(`draggable`, true);
+
+        if (note.textContent.trim().length === 0) {
+            note.remove();
+        }
     });
 
     // Навешиваем обработчики DND
