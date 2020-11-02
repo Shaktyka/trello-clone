@@ -1,5 +1,6 @@
 // Добавление заметки
 let noteIdCounter = 8;
+let draggedNote = null; // Перетаскиваемый элемент
 
 // Все колонки
 const columns = document.querySelectorAll(`.column`);
@@ -40,6 +41,13 @@ const columnInit = (column) => {
     // При потере фокуса 
     columnHeader.addEventListener(`blur`, (evt) => {
         columnHeader.removeAttribute(`contenteditable`, `true`);
+    });
+
+    // Событие `drop`
+    column.addEventListener(`drop`, (evt) => {
+        if (draggedNote) {
+            return column.append(draggedNote);
+        }
     });
 };
 

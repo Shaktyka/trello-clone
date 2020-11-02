@@ -85,13 +85,20 @@ body {
     margin-bottom: 10px;
 }
 
+.column-footer {
+    margin: 0;
+}
+
 .column-footer button {
+    width: 100%;
+    margin: 0;
+    padding: 16px 0 15px 0;
+    background-color: transparent;
     font-size: 14px;
     font-weight: 400;
     color: rgb(82, 82, 82);
-    margin: 0;
+    text-align: left;
     border: none;
-    background-color: transparent;
 }
 
 .note {

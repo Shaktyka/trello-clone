@@ -1,7 +1,5 @@
 // Работа с заметками
 const notes = document.querySelectorAll(`.note`);
-let draggedNote = null;
-
 
 // Обработчик `старт`
 function dragstartNoteHandler(evt) {
@@ -47,10 +45,10 @@ function dragleaveNoteHandler(evt) {
 
 // Обработчик `drop`
 function dropNoteHandler(evt) {
+    evt.stopPropagation();
     if (this === draggedNote) {
         return;
     }
-    // console.log(1);
 
     if (this.parentElement === draggedNote.parentElement) {
         const allNotes = Array.from(this.parentElement.querySelectorAll(`.note`));
