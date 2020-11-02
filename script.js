@@ -43,10 +43,16 @@ const columnInit = (column) => {
         columnHeader.removeAttribute(`contenteditable`, `true`);
     });
 
+    // Событие `over`
+    column.addEventListener(`dragover`, (evt) => {
+        evt.preventDefault();
+    });
+
     // Событие `drop`
     column.addEventListener(`drop`, (evt) => {
         if (draggedNote) {
-            return column.append(draggedNote);
+            const notesBlock = column.querySelector(`[data-notes]`);
+            return notesBlock.append(draggedNote);
         }
     });
 };
