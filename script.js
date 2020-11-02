@@ -1,7 +1,3 @@
-// Добавление заметки
-let noteIdCounter = 8;
-let draggedNote = null; // Перетаскиваемый элемент
-
 // Все колонки
 const columns = document.querySelectorAll(`.column`);
 
@@ -10,8 +6,8 @@ const createNote = () => {
     const noteEl = document.createElement(`div`);
     noteEl.classList.add(`note`);
     noteEl.setAttribute(`draggable`, `true`);
-    noteEl.setAttribute(`data-note-id`, noteIdCounter);
-    noteIdCounter++;
+    noteEl.setAttribute(`data-note-id`, Note.noteIdCounter);
+    Note.noteIdCounter++;
     return noteEl;
 };
 
@@ -21,7 +17,7 @@ const addNoteBtnClickHandler = (evt) => {
     const column = target.closest(`.column`);
     const notesBlock = column.querySelector(`[data-notes]`);
     const note = createNote();
-    noteProcess(note);
+    Note.process(note);
     notesBlock.appendChild(note);
     note.setAttribute(`contenteditable`, true);
     note.focus();
@@ -52,9 +48,9 @@ const columnInit = (column) => {
 
     // Событие `drop`
     column.addEventListener(`drop`, (evt) => {
-        if (draggedNote) {
+        if (Note.draggedNote) {
             const notesBlock = column.querySelector(`[data-notes]`);
-            return notesBlock.append(draggedNote);
+            return notesBlock.append(Note.draggedNote);
         }
     });
 };

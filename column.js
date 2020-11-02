@@ -3,6 +3,8 @@ let columnIdCounter = 4;
 const allColumns = document.querySelector(`.columns`);
 const addColumnBtn = document.querySelector(`[data-action-addcolumn]`);
 
+const Column = {}; // Дописать рефакторинг
+
 const createColumn = () => {
     const section = document.createElement(`section`);
     section.classList.add(`column`);
